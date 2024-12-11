@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Puzzle } from "lucide-react";
+import { Puzzle, CirclePlus } from "lucide-react";
 import { EmptyState } from "./EmptyState";
 import { TaskItem } from "./TaskItem";
 import { TaskCounter } from "./TaskCounter";
@@ -38,9 +38,10 @@ export default function TodoList() {
           />
           <Button
             type="submit"
-            className="bg-primary hover:bg-primary/90 text-primary-foreground px-4"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground px-4 font-bold flex items-center gap-1 text-[#8284FA] rounded-md"
           >
             Criar
+            <CirclePlus className="h-5 w-5" />
           </Button>
         </form>
 

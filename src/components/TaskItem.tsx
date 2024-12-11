@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Trash2, Edit2, Check, X } from 'lucide-react'
+import { Trash2, Edit2, Check, X, Circle } from 'lucide-react'
 import { Task } from "../types/task"
 import { useTodo } from "../contexts/todoContext"
 import { Input } from "../../@/components/ui/input"
@@ -16,14 +16,14 @@ export function TaskItem({ task }: TaskItemProps) {
   const [editedText, setEditedText] = useState(task.text)
 
   const handleEdit = () => {
-  if (editedText.trim() !== '') {
-    console.log('Editando tarefa:', { id: task._id, text: editedText }) // Log para depuração
-    editTask(task._id, editedText.trim())
-    setIsEditing(false)
-  } else {
-    toast.error('A tarefa não pode estar vazia!')
+    if (editedText.trim() !== '') {
+      console.log('Editando tarefa:', { id: task._id, text: editedText }) // Log para depuração
+      editTask(task._id, editedText.trim())
+      setIsEditing(false)
+    } else {
+      toast.error('A tarefa não pode estar vazia!')
+    }
   }
-}
 
   const handleCancel = () => {
     setEditedText(task.text)
@@ -32,12 +32,9 @@ export function TaskItem({ task }: TaskItemProps) {
 
   return (
     <div className="flex items-center gap-3 rounded-lg bg-zinc-800 p-4 mb-3">
-      <input
-        type="checkbox"
-        checked={task.completed}
-        onChange={() => toggleTask(task._id)}
-        className="h-4 w-4 rounded-full border-2 border-blue-500 bg-transparent checked:border-purple-500 checked:bg-purple-500"
-      />
+      <button onClick={() => toggleTask(task._id)} className="focus:outline-none">
+        <Circle className={`h-5 w-5 ${task.completed ? 'fill-current text-[#8284FA]' : 'text-blue-400'}`} />
+      </button>
       {isEditing ? (
         <div className="flex-1 flex items-center gap-2">
           <Input
@@ -68,4 +65,3 @@ export function TaskItem({ task }: TaskItemProps) {
     </div>
   )
 }
-
