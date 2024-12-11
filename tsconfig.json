@@ -1,7 +1,18 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ]
+  "compilerOptions": {
+    "jsx": "react-jsx", // Suporte para JSX
+    "target": "ESNext", // Define o alvo para um JavaScript moderno
+    "module": "ESNext", // Usa o sistema de módulos ESNext
+    "strict": true, // Habilita verificações estritas de TypeScript
+    "moduleResolution": "node", // Resolva módulos como o Node.js
+    "resolveJsonModule": true, // Permite importar arquivos JSON
+    "esModuleInterop": true, // Suporte para interoperabilidade com CommonJS
+    "skipLibCheck": true // Ignora verificação de tipos em bibliotecas
+  },
+  "include": [
+    "src",
+    "@/components/ui/dialog.tsx",
+    "src/components/ui/input.tsx"
+  ], // Inclui arquivos da pasta src
+  "exclude": ["node_modules"] // Exclui arquivos de node_modules
 }
