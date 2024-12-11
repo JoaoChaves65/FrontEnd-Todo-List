@@ -2,20 +2,19 @@
 	🚧  My To-Do App Projeto Concluído 🚀 🚧
 </h2>
 
-## ⚙ Funcionalidades
-
+### ⚙ Funcionalidades
   - Adicionar novas tarefas.
   - Listar todas as tarefas.
   - Marcar tarefas como concluídas.
   - Excluir tarefas.
   - Contador de tarefas criadas e concluídas.
   - Design responsivo e suporte a tema claro/escuro.
+  - Tornar o site completamente responsivo para dispositivos móveis.
 ---
 
-### 🏅  Desafios
-- [x] Adicionar persistência de dados no LocalStorage.
-- [x] Fazer animações para as mudanças de estado usando TailwindCSS.
-- [x] Tornar o site completamente responsivo para dispositivos móveis.
+### ⚙ Funcionalidades Extras
+- [x] Adicionar persistência de dados no LocalStorage para uso do modo norturno.
+- [x] Adicionar o botão de editar tarefas
 ---
 
 ### 🎨 Layout
